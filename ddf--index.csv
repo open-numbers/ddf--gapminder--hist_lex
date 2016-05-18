@@ -1,0 +1,6 @@
+key,value,file
+concept,name,ddf--concepts.csv
+concept,concept_type,ddf--concepts.csv
+"area,year",life_expectancy_at_birth,ddf--datapoints--life_expectancy_at_birth--by--area--year.csv
+"area,year",life_expectancy_with_interpolations,ddf--datapoints--life_expectancy_with_interpolations--by--area--year.csv
+area,name,ddf--entities--area.csv
