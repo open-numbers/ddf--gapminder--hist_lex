@@ -1,0 +1,104 @@
+{
+    "name": "ddf--gapminder--hist_lex",
+    "language": {
+        "id": "en"
+    },
+    "resources": [
+        {
+            "path": "ddf--concepts.csv",
+            "name": "ddf--concepts",
+            "schema": {
+                "primaryKey": "concept",
+                "fields": [
+                    {
+                        "name": "concept"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "concept_type"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--data_quality--by--area--year.csv",
+            "name": "ddf--datapoints--data_quality--by--area--year",
+            "schema": {
+                "primaryKey": [
+                    "area",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "area"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "data_quality"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--life_expectancy_at_birth--by--area--year.csv",
+            "name": "ddf--datapoints--life_expectancy_at_birth--by--area--year",
+            "schema": {
+                "primaryKey": [
+                    "area",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "area"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "life_expectancy_at_birth"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--datapoints--life_expectancy_with_interpolations--by--area--year.csv",
+            "name": "ddf--datapoints--life_expectancy_with_interpolations--by--area--year",
+            "schema": {
+                "primaryKey": [
+                    "area",
+                    "year"
+                ],
+                "fields": [
+                    {
+                        "name": "area"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "life_expectancy_with_interpolations"
+                    }
+                ]
+            }
+        },
+        {
+            "path": "ddf--entities--area.csv",
+            "name": "ddf--entities--area",
+            "schema": {
+                "primaryKey": "area",
+                "fields": [
+                    {
+                        "name": "area"
+                    },
+                    {
+                        "name": "name"
+                    }
+                ]
+            }
+        }
+    ]
+}
