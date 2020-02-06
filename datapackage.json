@@ -3,12 +3,16 @@
     "language": {
         "id": "en"
     },
+    "title": "ddf--gapminder--hist_lex",
+    "description": "",
+    "author": "",
+    "license": "",
+    "created": "2020-02-06T03:06:23.049790+00:00",
     "resources": [
         {
-            "path": "ddf--concepts.csv",
             "name": "ddf--concepts",
+            "path": "ddf--concepts.csv",
             "schema": {
-                "primaryKey": "concept",
                 "fields": [
                     {
                         "name": "concept"
@@ -19,86 +23,91 @@
                     {
                         "name": "concept_type"
                     }
-                ]
+                ],
+                "primaryKey": "concept"
             }
         },
         {
-            "path": "ddf--datapoints--data_quality--by--area--year.csv",
-            "name": "ddf--datapoints--data_quality--by--area--year",
+            "name": "ddf--datapoints--life_expectancy_at_birth--by--geo--time",
+            "path": "ddf--datapoints--life_expectancy_at_birth--by--geo--time.csv",
             "schema": {
-                "primaryKey": [
-                    "area",
-                    "year"
-                ],
                 "fields": [
                     {
-                        "name": "area"
+                        "name": "geo"
                     },
                     {
-                        "name": "year"
-                    },
-                    {
-                        "name": "data_quality"
-                    }
-                ]
-            }
-        },
-        {
-            "path": "ddf--datapoints--life_expectancy_at_birth--by--area--year.csv",
-            "name": "ddf--datapoints--life_expectancy_at_birth--by--area--year",
-            "schema": {
-                "primaryKey": [
-                    "area",
-                    "year"
-                ],
-                "fields": [
-                    {
-                        "name": "area"
-                    },
-                    {
-                        "name": "year"
+                        "name": "time"
                     },
                     {
                         "name": "life_expectancy_at_birth"
                     }
-                ]
-            }
-        },
-        {
-            "path": "ddf--datapoints--life_expectancy_with_interpolations--by--area--year.csv",
-            "name": "ddf--datapoints--life_expectancy_with_interpolations--by--area--year",
-            "schema": {
-                "primaryKey": [
-                    "area",
-                    "year"
                 ],
-                "fields": [
-                    {
-                        "name": "area"
-                    },
-                    {
-                        "name": "year"
-                    },
-                    {
-                        "name": "life_expectancy_with_interpolations"
-                    }
+                "primaryKey": [
+                    "geo",
+                    "time"
                 ]
             }
         },
         {
-            "path": "ddf--entities--area.csv",
-            "name": "ddf--entities--area",
+            "name": "ddf--entities--geo",
+            "path": "ddf--entities--geo.csv",
             "schema": {
-                "primaryKey": "area",
                 "fields": [
                     {
-                        "name": "area"
+                        "name": "geo"
                     },
                     {
                         "name": "name"
                     }
-                ]
+                ],
+                "primaryKey": "geo"
             }
         }
-    ]
+    ],
+    "ddfSchema": {
+        "concepts": [
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "concept_type",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            }
+        ],
+        "entities": [
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            }
+        ],
+        "datapoints": [
+            {
+                "primaryKey": [
+                    "geo",
+                    "time"
+                ],
+                "value": "life_expectancy_at_birth",
+                "resources": [
+                    "ddf--datapoints--life_expectancy_at_birth--by--geo--time"
+                ]
+            }
+        ],
+        "synonyms": []
+    }
 }
